@@ -6,12 +6,16 @@ function sortear() {
     let numerosSorteados = [];
     let numerosCriados;
 
-    for(let i = 0; i <= quantidadeDeNumeros; i++){
+    for(let i = 0; i < quantidadeDeNumeros; i++){
         numerosCriados = obterNumeroAleatorio(doNumero, ateNumero);
+        while(numerosSorteados.includes(numerosCriados)){
+            numerosCriados = obterNumeroAleatorio(doNumero, ateNumero);
+        }
         numerosSorteados.push(numerosCriados);
     }
 
-    console.log(numerosSorteados);
+    let resultado = document.getElementById('resultado');
+    resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados: ${numerosSorteados}</label>`;
 }
 
 function obterNumeroAleatorio(min, max) {

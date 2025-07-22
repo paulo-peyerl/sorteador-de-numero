@@ -3,6 +3,11 @@ function sortear() {
     let doNumero = parseInt(document.getElementById('de').value);
     let ateNumero = parseInt(document.getElementById('ate').value);
 
+    if(doNumero >= ateNumero){
+        alert('O campo "Do número" é maior ou igual ao "Até número"');
+        return
+    }
+
     let numerosSorteados = [];
     let numerosCriados;
 

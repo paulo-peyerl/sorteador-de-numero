@@ -5,7 +5,12 @@ function sortear() {
 
     if(doNumero >= ateNumero){
         alert('O campo "Do número" é maior ou igual ao "Até número"');
-        return
+        return;
+    }
+
+    if(quantidadeDeNumeros > (ateNumero - doNumero + 1)){
+        alert('Campo "Quantidade" deve ser menor ou igual ao intervalo informado no campo "Do número" até o campo "Até o número". Verifique!');
+        return;
     }
 
     let numerosSorteados = [];
